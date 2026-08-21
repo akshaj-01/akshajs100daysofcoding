@@ -1,0 +1,35 @@
+Q1 Write a program to input two numbers and display their sum.
+
+#include <stdio.h>
+int main()
+{
+int a,b;
+int sum;
+printf("Enter a and b");
+scanf("%d%d",&a,&b);
+sum = a+b;
+printf("%d\n",sum);
+return 0;
+}
+
+Write a program to input two numbers and display their sum, difference, product, and quotient.
+#include <stdio.h>
+int main()
+{
+int a,b;
+int sum;
+int diff;
+int mult;
+int div;
+printf("Enter a and b");
+scanf("%d%d",&a,&b);
+sum = a+b;
+diff = a-b;
+mult = a*b;
+div = a/b;
+printf("%d\n",sum);
+printf("%d\n",diff);
+printf("%d\n",mult);
+printf("%d\n",div);
+return 0;
+}
