@@ -1,0 +1,47 @@
+\\Write a program to check if a number is a strong number
+  #include <stdio.h>
+int main()
+{
+int num, temp, digit, i;
+int fact, sum = 0;
+printf("Enter a number: ");
+scanf("%d", &num);
+temp = num;
+while (temp > 0)
+{
+digit = temp % 10;
+fact = 1;
+for (i = 1; i <= digit; i++)
+{
+fact = fact * i;
+}
+sum = sum + fact;
+temp = temp / 10;
+}
+if (sum == num)
+{
+printf("%d is a strong number.\n", num);
+}
+else
+{
+printf("%d is not a strong number.\n", num);
+}
+return 0;
+}
+
+
+\\Write a program to find the sum of the series: 1 + 3/4 + 5/6 + 7/8 + … up to n terms.
+#include <stdio.h>
+int main()
+{
+int n, i;
+double sum = 1.0;
+printf("Enter number of terms: ");
+scanf("%d", &n);
+for (i = 2; i <= n; i++)
+{
+sum = sum + (double)(2 * i - 1) / (2 * i);
+}
+printf("Approximate sum: %.1f\n", sum);
+return 0;
+}
