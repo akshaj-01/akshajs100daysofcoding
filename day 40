@@ -1,0 +1,104 @@
+\\ perform diagonal transversal of a matrix
+  #include <stdio.h>
+int main()
+{
+int r, c, i, j, start;
+scanf("%d %d", &r, &c);
+int a[r][c];
+for (i = 0; i < r; i++)
+{
+for (j = 0; j < c; j++)
+{
+scanf("%d", &a[i][j]);
+}
+}
+for (start = 0; start < c; start++)
+{
+i = 0;
+j = start;
+while (i < r && j >= 0)
+{
+printf("%d ", a[i][j]);
+i++;
+j--;
+}
+}
+for (start = 1; start < r; start++)
+{
+i = start;
+j = c - 1;
+while (i < r && j >= 0)
+{
+printf("%d ", a[i][j]);
+i++;
+j--;
+}
+}
+return 0;
+}
+
+
+\\Multiply two matrices.
+  #include <stdio.h>
+
+int main()
+{
+    int r1, c1, r2, c2;
+    int i, j, k;
+
+    scanf("%d %d", &r1, &c1);
+
+    int a[r1][c1];
+
+    for (i = 0; i < r1; i++)
+    {
+        for (j = 0; j < c1; j++)
+        {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    scanf("%d %d", &r2, &c2);
+
+    int b[r2][c2];
+
+    for (i = 0; i < r2; i++)
+    {
+        for (j = 0; j < c2; j++)
+        {
+            scanf("%d", &b[i][j]);
+        }
+    }
+
+    if (c1 != r2)
+    {
+        printf("Matrix multiplication not possible");
+        return 0;
+    }
+
+    int result[r1][c2];
+
+    for (i = 0; i < r1; i++)
+    {
+        for (j = 0; j < c2; j++)
+        {
+            result[i][j] = 0;
+
+            for (k = 0; k < c1; k++)
+            {
+                result[i][j] += a[i][k] * b[k][j];
+            }
+        }
+    }
+
+    for (i = 0; i < r1; i++)
+    {
+        for (j = 0; j < c2; j++)
+        {
+            printf("%d ", result[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
